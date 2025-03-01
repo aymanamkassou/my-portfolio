@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 33, 33, 33;
+  --background-rgb: 245, 245, 245;
+}
+
+.dark {
+  --foreground-rgb: 240, 240, 240;
+  --background-rgb: 18, 18, 18;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@layer components {
+  .section-title {
+    @apply text-xl font-normal mb-6 dark:text-dark-accent text-light-accent;
+  }
+  
+  .card {
+    @apply border p-6 mb-6 transition-all dark:border-dark-border border-light-border dark:bg-dark-surface bg-light-surface hover:shadow-md;
+  }
+  
+  .badge {
+    @apply text-xs py-1 px-2 mr-2 mb-2 inline-block dark:bg-dark-surface bg-light-surface dark:border-dark-border border-light-border border;
+  }
+  
+  .terminal-prompt::before {
+    content: "$ ";
+    @apply dark:text-dark-accent text-light-accent;
+  }
+}
