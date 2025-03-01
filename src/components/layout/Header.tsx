@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { useTheme } from '@/lib/theme';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {

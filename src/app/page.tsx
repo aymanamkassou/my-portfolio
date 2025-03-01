@@ -11,12 +11,12 @@ export default function Home() {
       <section className="mb-16 py-16">
         <h1 className="text-3xl mb-4 font-normal">Ayman Amkassou</h1>
         <Terminal 
-          text="Research Assistant & Software Engineering Student" 
+          text='Research Assistant & Software Engineering Student' 
           className="text-xl mb-6"
         />
         <p className="max-w-2xl text-lg">
-          Software engineering student with algorithm development and research experience at Oracle Labs.
-          Passionate about low-level programming, C/C++, and building systems from the ground up.
+        {`Software engineering student with algorithm development and research experience at Oracle Labs.
+          Passionate about low-level programming, C/C++, and building systems from the ground up.`}
         </p>
       </section>
       
