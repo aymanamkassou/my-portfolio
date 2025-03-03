@@ -7,7 +7,6 @@ import Education from '@/components/sections/Education';
 
 export default function Home() {
   return (
-    <link rel="icon" href="/favicon.ico">
     <div className="container mx-auto px-4">
       <section className="mb-16 py-16">
         <h1 className="text-3xl mb-4 font-normal">Ayman Amkassou</h1>
