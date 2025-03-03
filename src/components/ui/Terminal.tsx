@@ -19,7 +19,6 @@ export default function Terminal({ text, typingSpeed = 30, className = '' }: Ter
         setDisplayedText(prev => prev + text[currentIndex]);
         setCurrentIndex(prev => prev + 1);
       }, typingSpeed);
-
       return () => clearTimeout(timeout);
     } else {
       setIsTyping(false);
@@ -28,8 +27,11 @@ export default function Terminal({ text, typingSpeed = 30, className = '' }: Ter
 
   return (
     <div className={`font-mono ${className}`}>
-      <div className="terminal-prompt">{displayedText}</div>
-      {isTyping && <span className="animate-pulse">▋</span>}
+      <div className="terminal-prompt">
+        {displayedText}
+        {isTyping && <span className="animate-pulse">▋</span>}
+      </div>
     </div>
   );
 }
+

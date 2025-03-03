@@ -12,22 +12,15 @@ export interface Education {
 
 export const educationData: Education[] = [
   {
-    degree: 'Engineering Program: Software Engineering and Integration of Computer Systems',
+    degree: 'M.Eng Engineering Program: Software Engineering and Integration of Computer Systems',
     institution: 'Faculty of Sciences and Techniques, Mohammedia',
     period: 'Ongoing',
     graduation: '2026'
   },
   {
-    degree: 'Mathematics, Computer Science, Physics',
+    degree: 'Diploma in Scientific and Technical University Studies: Mathematics, Computer Science, and Physics',
     institution: 'Faculty of Sciences and Techniques, Mohammedia',
     period: 'June 2023',
-    grade: 'A',
-    details: ['Diploma in Scientific and Technical University Studies']
-  },
-  {
-    degree: 'Baccalaureate in Physics, French Option',
-    institution: 'Charrif El Idrissi High School, Benslimane',
-    period: 'June 2021',
     grade: 'A'
   }
 ];

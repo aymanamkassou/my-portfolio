@@ -10,7 +10,7 @@ export const experiences: Experience[] = [
   {
     title: 'Research Assistant',
     company: 'Oracle Labs',
-    location: 'Hybrid',
+    location: 'Hybrid @ Casablanca, Morocco',
     period: 'July 2024 - October 2024',
     description: [
       'Worked as a first year student within Oracle Labs on a confidential project.',

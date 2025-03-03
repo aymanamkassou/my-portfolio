@@ -38,6 +38,7 @@ export const skillCategories: SkillCategory[] = [
       'Bootstrap',
       'TailwindCSS',
       'GTK',
+      'Next.js',
       'OpenGL'
     ]
   },
@@ -47,6 +48,7 @@ export const skillCategories: SkillCategory[] = [
       'OracleDB',
       'OCI',
       'Oracle Apex',
+      'Linux',
       'Vim',
       'Maplesoft Maple',
       'Matlab',
@@ -58,6 +60,17 @@ export const skillCategories: SkillCategory[] = [
       'Adobe Suite',
       'CINEMA 4D',
       'Blender'
+    ]
+  },
+  {
+    category: 'Languages',
+    skills: [
+      'Moroccan Arabic (Native)',
+      'English (C2 Native)',
+      'Arabic (Native)',
+      'French (Profesionnal)',
+      'Tamazight (Elementary)',
+      'German (Elementary)'
     ]
   }
 ];

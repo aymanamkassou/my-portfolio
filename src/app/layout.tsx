@@ -7,6 +7,9 @@ import { ThemeProvider } from '@/lib/theme'
 export const metadata: Metadata = {
   title: 'Ayman Amkassou | Research & Engineering Portfolio',
   description: 'Software engineering student and research assistant with experience at Oracle Labs.',
+  icons: {
+    icon: '/icon.ico',
+  },
 }
 
 export default function RootLayout({

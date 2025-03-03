@@ -1,6 +1,7 @@
 import Terminal from '@/components/ui/Terminal';
 import { projects } from '@/data/projects';
 import Link from 'next/link';
+import { Lock } from 'lucide-react';
 
 export default function Projects() {
   return (
@@ -21,8 +22,13 @@ export default function Projects() {
               ))}
             </div>
             
-            {project.link && (
-              <div className="mt-4">
+            <div className="mt-4">
+              {project.link === 'private repository' ? (
+                <div className="inline-flex items-center px-3 py-2 text-sm border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent">
+                  <Lock size={16} className="mr-2 dark:border-dark-accent  dark:text-dark-accent text-light-accent pb-1 " />
+                  <span className="font-medium">Private Repository</span>
+                </div>
+              ) : project.link && (
                 <Link 
                   href={project.link} 
                   target="_blank" 
@@ -31,8 +37,8 @@ export default function Projects() {
                 >
                   View Project →
                 </Link>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         ))}
       </div>
