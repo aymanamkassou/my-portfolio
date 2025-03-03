@@ -35,8 +35,19 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="text-sm border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent pb-1"
                 >
+                  View Project's Repository →
+                </Link>
+              )}
+              {project.link_deployed && (
+                <Link 
+                  href={project.link_deployed} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="ml-5 text-sm border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent pb-1"
+                >
                   View Project →
                 </Link>
+
               )}
             </div>
           </div>

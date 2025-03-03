@@ -10,8 +10,9 @@ export const projects: Project[] = [
   {
     title: 'Flight Route Visualizer',
     description: 'A sophisticated aviation route optimization system implementing custom CSR graph structures with Dijkstra and BFS algorithms. Processes real airway data to create authentic flight corridors, visualizes the pathfinding process step-by-step, and simulates aircraft movement along optimal routes. Features bidirectional routing and a RESTful API connecting C++ backend with Next.js visualization frontend.',
-    technologies: ['C++', 'cpprestsdk', 'Next.js', 'CSR Graph Implementation', 'REST API'],
-    link: 'https://github.com/aymanamkassou/Flight-Route-Visualizer'
+    technologies: ['C++', 'cpprestsdk', 'Next.js', 'CSR Graph Implementation', 'REST API', 'AWS'],
+    link: 'https://github.com/aymanamkassou/Flight-Route-Visualizer',
+    link_deployed: 'https://ifr-route-dijkstra-visualizer.vercel.app/'
   },
   {
     title: 'Verlet Integration Particle Physics Simulation',

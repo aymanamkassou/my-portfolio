@@ -34,11 +34,11 @@ export const skillCategories: SkillCategory[] = [
     category: 'Frameworks & Libraries',
     skills: [
       'ReactJS',
+      'Next.js',
+      'TailwindCSS',
       'jQuery',
       'Bootstrap',
-      'TailwindCSS',
       'GTK',
-      'Next.js',
       'OpenGL'
     ]
   },
@@ -50,6 +50,7 @@ export const skillCategories: SkillCategory[] = [
       'Oracle Apex',
       'Linux',
       'Vim',
+      'AWS',
       'Maplesoft Maple',
       'Matlab',
       'Git/Version Control',
