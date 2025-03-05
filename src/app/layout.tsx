@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { ThemeProvider } from '@/lib/theme'
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Ayman Amkassou | Research & Engineering Portfolio',
@@ -25,6 +26,7 @@ export default function RootLayout({
           <main className="flex-grow py-8">{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
