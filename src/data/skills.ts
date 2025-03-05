@@ -11,6 +11,7 @@ export const skillCategories: SkillCategory[] = [
       'Algorithm Development',
       'Research',
       'Machine Learning',
+      'Database Systems',
       'Vector Databases'
     ]
   },
@@ -50,6 +51,7 @@ export const skillCategories: SkillCategory[] = [
       'Oracle Apex',
       'Linux',
       'Vim',
+      'gdb',
       'AWS',
       'Maplesoft Maple',
       'Matlab',
