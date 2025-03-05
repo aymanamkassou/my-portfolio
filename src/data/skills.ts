@@ -20,6 +20,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       'C',
       'C++',
+      'Rust',
       'Java/JEE',
       'Python',
       'Bash',
