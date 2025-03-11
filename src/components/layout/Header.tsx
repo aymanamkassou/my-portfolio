@@ -39,6 +39,9 @@ export default function Header() {
           <Link href="/experience" className="hover:dark:text-dark-accent hover:text-light-accent">
             ~/experience
           </Link>
+          <Link href="/blog" className="hover:dark:text-dark-accent hover:text-light-accent">
+            ~/blog
+          </Link>
           <Link href="/contact" className="hover:dark:text-dark-accent hover:text-light-accent">
             ~/contact
           </Link>

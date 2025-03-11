@@ -44,3 +44,37 @@ body {
     @apply dark:text-dark-accent text-light-accent;
   }
 }
+
+.math-formula-container {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+/* Style for math formulas */
+.math-formula-wrapper {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.math-formula-wrapper .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+/* Remove overflowing scrollbar when not needed */
+.math-formula-wrapper .katex-display::-webkit-scrollbar {
+  height: 6px;
+}
+
+.math-formula-wrapper .katex-display::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Make sure code blocks are responsive */
+.code-block-container {
+  max-width: 100%;
+  overflow-x: auto;
+}

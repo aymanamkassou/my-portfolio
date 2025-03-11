@@ -4,7 +4,12 @@ export default function Contact() {
   return (
     <div className="container mx-auto px-4">
       <section className="mb-16">
-        <Terminal text="contact" className="section-title" />
+      <h1 className="pt-16 text-3xl mb-4 font-normal">Contact</h1>
+      <Terminal 
+        text="./get_in_touch.sh" 
+        typingSpeed={40}
+        className="text-xl mb-8"
+      />
         
         <div className="card max-w-2xl mx-auto">
           <div className="mb-8">
