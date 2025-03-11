@@ -39,7 +39,7 @@ export default function Blog() {
           href="/blog" 
           className="border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent pb-1"
         >
-          View All Blogs →
+          View All Articles →
         </Link>
       </div>
       )}
