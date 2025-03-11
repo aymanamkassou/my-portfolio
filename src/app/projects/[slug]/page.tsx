@@ -239,7 +239,7 @@ export default function ProjectDetailPage() {
                   navigator.clipboard.writeText(window.location.href);
                   setShowShareOptions(false);
                 }}
-                className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
               >
                 Copy Link
               </button>
@@ -247,7 +247,7 @@ export default function ProjectDetailPage() {
                 href={`https://twitter.com/intent/tweet?text=Check out this awesome project: ${project.title}&url=${encodeURIComponent(window.location.href)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
               >
                 Twitter
               </a>
@@ -255,7 +255,7 @@ export default function ProjectDetailPage() {
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
               >
                 LinkedIn
               </a>
@@ -410,7 +410,7 @@ export default function ProjectDetailPage() {
                     </Link>
                   )}
                   
-                  {/* Example download link - for illustration */}
+                  {/* Example download link - for illustration
                   <Link 
                     href="#"
                     className="flex items-center px-4 py-2 border dark:border-dark-border border-light-border hover:border-light-accent dark:hover:border-dark-accent text-sm transition-all"
@@ -421,7 +421,7 @@ export default function ProjectDetailPage() {
                   >
 <Download size={16} className="mr-2 dark:text-dark-accent text-light-accent" />
                     Documentation
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               
@@ -724,7 +724,7 @@ export default function ProjectDetailPage() {
                   <div className="relative h-96 border dark:border-dark-border border-light-border overflow-hidden flex items-center justify-center bg-light-surface/30 dark:bg-dark-surface/30">
                     <div className="text-center">
                       <p className="text-gray-500 dark:text-gray-400">Video demo would be embedded here</p>
-                      <button className="mt-4 px-4 py-2 bg-light-accent dark:bg-dark-accent text-white rounded-sm">
+                      <button className="mt-4 px-4 py-2 border border-dark-accent border-t text-dark-accent rounded-sm">
                         Play Demo
                       </button>
                     </div>

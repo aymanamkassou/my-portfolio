@@ -75,6 +75,13 @@ export default function Header() {
               ~/experience
             </Link>
             <Link 
+              href="/blog" 
+              className="hover:dark:text-dark-accent hover:text-light-accent"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ~/blog
+            </Link>
+            <Link 
               href="/contact" 
               className="hover:dark:text-dark-accent hover:text-light-accent"
               onClick={() => setIsMenuOpen(false)}
