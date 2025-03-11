@@ -48,9 +48,11 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
       'Flight Route Visualizer': '/images/projects/flight-route.png',
       'Verlet Integration Particle Physics Simulation': '/images/projects/physics-sim.png',
       'Hydraulic Electronic Centralized Aircraft Monitor Simulation': '/images/projects/hydraulic-ecam.jpg',
-      'Gladiator Video Game': '/images/projects/gladiator-game.jpeg'
+      'Gladiator Video Game': '/images/projects/gladiator-game.jpeg',
+      'Casablanca Twin Center - Flight Simulator Scenery': '/images/projects/casablanca-twin-center.webp',
+      'Hassan II Grand Mosque - Flight Simulator Scenery': '/images/projects/hassan-ii-mosque.webp'
     };
-
+  
     return imageMap[title] || '/images/projects/default-project.jpg';
   };
 

@@ -49,6 +49,16 @@ export default function ProjectDetailPage() {
       '/images/projects/gladiator-game/gallery1.jpg',
       '/images/projects/gladiator-game/gallery2.jpg',
       '/images/projects/gladiator-game/gallery3.jpg',
+    ],
+    'casablanca-twin-center': [
+      '/images/projects/casablanca-twin-center/gallery1.jpg',
+      '/images/projects/casablanca-twin-center/gallery2.jpg',
+      '/images/projects/casablanca-twin-center/gallery3.jpg',
+    ],
+    'hassan-ii-grand-mosque': [
+      '/images/projects/hassan-ii-mosque/gallery1.jpg',
+      '/images/projects/hassan-ii-mosque/gallery2.jpg',
+      '/images/projects/hassan-ii-mosque/gallery3.jpg',
     ]
   };
 
@@ -57,9 +67,7 @@ export default function ProjectDetailPage() {
     if (!slug) return;
     
     const slugStr = Array.isArray(slug) ? slug[0] : slug;
-    const foundProject = projects.find(p => 
-      p.title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '') === slugStr
-    );
+    const foundProject = projects.find(p => p.slug === slugStr);
     
     if (foundProject) {
       setProject(foundProject);
@@ -76,7 +84,7 @@ export default function ProjectDetailPage() {
         <p className="mb-8">The project you're looking for doesn't exist or has been moved.</p>
         <Link 
           href="/projects"
-          className="px-6 py-3 rounded-md bg-light-accent dark:bg-dark-accent text-white"
+          className="px-6 py-3 rounded-sm border dark:border-dark-accent text-light-accent dark:text-dark-accent"
         >
           Back to Projects
         </Link>
@@ -86,43 +94,59 @@ export default function ProjectDetailPage() {
 
   // Project key features based on title
   const getProjectFeatures = (title: string) => {
-    const featuresMap: Record<string, string[]> = {
-      'Flight Route Visualizer': [
-        'Custom CSR graph implementation for efficient pathfinding',
-        'Real-time visualization of Dijkstra\'s algorithm and BFS',
-        'Interactive aircraft movement simulation along optimal routes',
-        'Bidirectional routing capabilities',
-        'REST API connecting C++ backend with Next.js frontend',
-        'Processing of real airway data for authentic flight corridors'
-      ],
-      'Verlet Integration Particle Physics Simulation': [
-        'Real-time physics simulation with Verlet integration',
-        'Accurate collision detection and response',
-        'Interactive particle manipulation with mouse forces',
-        'Customizable physical properties (mass, elasticity, friction)',
-        'Efficient rendering with OpenGL optimization techniques',
-        'Boundary constraints with realistic bounce effects'
-      ],
-      'Hydraulic Electronic Centralized Aircraft Monitor Simulation': [
-        'Pixel-perfect recreation of Airbus A320 ECAM display',
-        'Realistic pressure value fluctuations matching real aircraft behavior',
-        'Interactive system controls with authentic feedback',
-        'Dynamic color changes reflecting system states and alerts',
-        'Accurate simulation of GREEN hydraulic system operations',
-        'Educational tool for understanding aircraft systems'
-      ],
-      'Gladiator Video Game': [
-        'Engaging 1v1 combat mechanics with unique character abilities',
-        'Dynamic leveling system affecting gameplay strategies',
-        'Performance-optimized real-time gameplay',
-        'Multiple character selection with distinct fighting styles',
-        'Built with pure C and GTK+ for cross-platform compatibility',
-        'Challenge-based progression system'
-      ]
-    };
-
-    return featuresMap[title] || [];
+  const featuresMap: Record<string, string[]> = {
+    'Flight Route Visualizer': [
+      'Custom CSR graph implementation for efficient pathfinding',
+      'Real-time visualization of Dijkstra\'s algorithm and BFS',
+      'Interactive aircraft movement simulation along optimal routes',
+      'Bidirectional routing capabilities',
+      'REST API connecting C++ backend with Next.js frontend',
+      'Processing of real airway data for authentic flight corridors'
+    ],
+    'Verlet Integration Particle Physics Simulation': [
+      'Real-time physics simulation with Verlet integration',
+      'Accurate collision detection and response',
+      'Interactive particle manipulation with mouse forces',
+      'Customizable physical properties (mass, elasticity, friction)',
+      'Efficient rendering with OpenGL optimization techniques',
+      'Boundary constraints with realistic bounce effects'
+    ],
+    'Hydraulic Electronic Centralized Aircraft Monitor Simulation': [
+      'Pixel-perfect recreation of Airbus A320 ECAM display',
+      'Realistic pressure value fluctuations matching real aircraft behavior',
+      'Interactive system controls with authentic feedback',
+      'Dynamic color changes reflecting system states and alerts',
+      'Accurate simulation of GREEN hydraulic system operations',
+      'Educational tool for understanding aircraft systems'
+    ],
+    'Gladiator Video Game': [
+      'Engaging 1v1 combat mechanics with unique character abilities',
+      'Dynamic leveling system affecting gameplay strategies',
+      'Performance-optimized real-time gameplay',
+      'Multiple character selection with distinct fighting styles',
+      'Built with pure C and GTK+ for cross-platform compatibility',
+      'Challenge-based progression system'
+    ],
+    'Casablanca Twin Center - Flight Simulator Scenery': [
+      'High-fidelity 3D model with accurate architectural proportions',
+      'PBR materials for realistic appearance in all lighting conditions',
+      'Optimized polygon count for performance efficiency',
+      'Detailed night lighting effects matching real-world appearance',
+      'Open-source contribution to flight simulation community',
+      'Seamless integration with existing Casablanca scenery'
+    ],
+    'Hassan II Grand Mosque - Flight Simulator Scenery': [
+      'Detailed minaret and mosque structure with authentic Islamic architectural elements',
+      'Custom textures capturing the distinctive Moroccan artistic patterns',
+      'Realistic night lighting to showcase the mosques illumination features',
+      'Proper coastal placement overlooking the Atlantic Ocean',
+      'Open-source licensing for community modifications',
+      'Performance-optimized model with appropriate LOD implementation'
+    ]
   };
+
+  return featuresMap[title] || [];
+};
 
   // Project technical details based on title
   const getProjectTechnicalDetails = (title: string) => {
@@ -134,9 +158,13 @@ export default function ProjectDetailPage() {
       'Hydraulic Electronic Centralized Aircraft Monitor Simulation': 
         'The ECAM simulation recreates the Airbus A320 HYD page with high fidelity using custom SVG elements with JavaScript-controlled attributes for dynamic system states. Pressure calculations follow realistic behavior models based on actual aircraft system specifications. The GREEN hydraulic system simulation includes pump dynamics, reservoir level monitoring, and system pressure indicators with appropriate warning thresholds. The color-coding logic follows genuine Airbus display protocols for normal operations, advisories, cautions, and warnings.',
       'Gladiator Video Game': 
-        'The Gladiator game is built using C with GTK+ for cross-platform GUI capabilities. The combat system implements a turn-based mechanics engine with probabilistic outcomes influenced by character statistics and player choices. Character progression follows a balanced leveling curve modeled as a modified logistic function to provide appropriate challenge scaling. The rendering system optimizes redraws to minimize resource usage while maintaining smooth animations during combat sequences.'
+        'The Gladiator game is built using C with GTK+ for cross-platform GUI capabilities. The combat system implements a turn-based mechanics engine with probabilistic outcomes influenced by character statistics and player choices. Character progression follows a balanced leveling curve modeled as a modified logistic function to provide appropriate challenge scaling. The rendering system optimizes redraws to minimize resource usage while maintaining smooth animations during combat sequences.',
+      'Casablanca Twin Center - Flight Simulator Scenery':
+        'This 3D model was created using Blender with detailed attention to architectural accuracy of the iconic twin towers. The modeling process involved precise measurements and photo reference to capture the unique design elements of the structure. Texturing utilized PBR (Physically Based Rendering) workflow with custom materials created for glass, concrete, and metal elements. The model implements multiple LOD (Level of Detail) versions to maintain performance at various viewing distances in the flight simulator. Integration with Microsoft Flight Simulator was accomplished through the SDK\'s scenery system, with careful geo-referencing to ensure proper placement within the Casablanca cityscape.',
+      'Hassan II Grand Mosque - Flight Simulator Scenery':
+        'The Hassan II Grand Mosque model was created as an open-source contribution to the flight simulation community, with particular attention to the iconic minaret which stands as the tallest religious structure in the world. The 3D modeling process utilized subdivision surface techniques to accurately represent the intricate Islamic architectural details while maintaining reasonable polygon counts. Custom substance materials were developed to capture the distinctive tile work and decorative elements. The mosque\'s unique coastal position was carefully geo-referenced to match its real-world orientation overlooking the Atlantic Ocean. Night lighting was implemented using emissive textures to recreate the mosque\'s dramatic evening illumination pattern.'
     };
-
+  
     return detailsMap[title] || '';
   };
 
@@ -146,9 +174,11 @@ export default function ProjectDetailPage() {
       'Flight Route Visualizer': '/images/projects/flight-route.png',
       'Verlet Integration Particle Physics Simulation': '/images/projects/physics-sim.png',
       'Hydraulic Electronic Centralized Aircraft Monitor Simulation': '/images/projects/hydraulic-ecam.jpg',
-      'Gladiator Video Game': '/images/projects/gladiator-game.jpeg'
+      'Gladiator Video Game': '/images/projects/gladiator-game.jpeg',
+      'Casablanca Twin Center - Flight Simulator Scenery': '/images/projects/casablanca-twin-center.webp',
+      'Hassan II Grand Mosque - Flight Simulator Scenery': '/images/projects/hassan-ii-mosque.webp'
     };
-
+  
     return imageMap[title] || '/images/projects/default-project.jpg';
   };
 
@@ -158,9 +188,11 @@ export default function ProjectDetailPage() {
       'Flight Route Visualizer': 'February 2024',
       'Verlet Integration Particle Physics Simulation': 'November 2023',
       'Hydraulic Electronic Centralized Aircraft Monitor Simulation': 'July 2023',
-      'Gladiator Video Game': 'March 2023'
+      'Gladiator Video Game': 'March 2023',
+      'Casablanca Twin Center - Flight Simulator Scenery': 'September 2020',
+      'Hassan II Grand Mosque - Flight Simulator Scenery': 'September 2020'
     };
-
+  
     return dateMap[title] || 'Unknown';
   };
 
@@ -178,7 +210,7 @@ export default function ProjectDetailPage() {
   const getAdjacentProjects = () => {
     if (!project) return { prev: null, next: null };
     
-    const currentIndex = projects.findIndex(p => p.title === project.title);
+    const currentIndex = projects.findIndex(p => p.slug === project.slug);
     const prev = currentIndex > 0 ? projects[currentIndex - 1] : null;
     const next = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
     

@@ -27,7 +27,7 @@ export const projects: Project[] = [
       "Deployed on AWS EC2 with automated CI/CD pipeline for seamless updates"
     ],
     challenges: [
-      "Optimized graph traversal to handle 10,000+ nodes in under 200ms",
+      "Optimized graph traversal to handle 10,000+ nodes in under 100ms",
       "Solved coordinate system conversion challenges between aviation data formats",
       "Implemented smooth aircraft movement simulation using cubic Bezier curves",
       "Ensured real-time synchronization between backend calculations and frontend visualization"
@@ -132,5 +132,65 @@ export const projects: Project[] = [
     role: "Game Developer & Designer",
     duration: "4 months",
     impact: "Demonstrated low-level game development skills"
+  },
+  {
+    slug: "casablanca-twin-center",
+    title: "Casablanca Twin Center - Flight Simulator Scenery",
+    description: "Contributed to the flight simulation community by creating a detailed 3D model of the iconic Casablanca Twin Center for Microsoft Flight Simulator. The model features accurate dimensions, texturing, and placement within the Casablanca cityscape.",
+    detailedDescription: [
+      "Created high-fidelity 3D model of the Casablanca Twin Center with accurate proportions",
+      "Developed detailed textures with PBR materials for realistic appearance",
+      "Optimized polygon count and LOD implementation for performance efficiency",
+      "Integrated the model into Microsoft Flight Simulator with proper placement and orientation",
+      "Published as an open-source contribution to the flight simulation community"
+    ],
+    challenges: [
+      "Maintaining balance between visual fidelity and performance optimization",
+      "Accurately recreating architectural details from reference materials",
+      "Implementing proper LOD (Level of Detail) for various viewing distances",
+      "Ensuring compatibility with Microsoft Flight Simulator SDK requirements"
+    ],
+    features: [
+      "Architecturally accurate 3D model of the Twin Center towers",
+      "High-resolution textures with night lighting effects",
+      "Performance-optimized mesh and materials",
+      "Seamless integration with existing Casablanca scenery",
+      "Open-source availability for community use and improvement"
+    ],
+    technologies: ['3D Modeling', 'Blender', 'Microsoft Flight Simulator SDK', 'Photoshop', 'PBR Texturing'],
+    link_deployed: "https://flightsim.to/file/355/casablanca-twin-center",
+    role: "3D Modeler & Open-Source Contributor",
+    duration: "4 weeks",
+    impact: "Enhanced realism for flight simulation experiences in Casablanca"
+  },
+  {
+    slug: "hassan-ii-grand-mosque",
+    title: "Hassan II Grand Mosque - Flight Simulator Scenery",
+    description: "Created a detailed 3D model of the Hassan II Grand Mosque in Casablanca for Microsoft Flight Simulator, featuring intricate architectural details, accurate placement, and optimized performance. Published as an open-source contribution to the flight simulation community.",
+    detailedDescription: [
+      "Modeled the iconic Hassan II Grand Mosque with attention to architectural details",
+      "Created custom textures capturing the distinctive Moroccan artistic elements",
+      "Implemented night lighting to showcase the mosque's illumination features",
+      "Optimized the model for flight simulator performance across various hardware configurations",
+      "Contributed to the open-source flight simulation community with free access and usage rights"
+    ],
+    challenges: [
+      "Recreating complex Islamic architectural details within polygon budget constraints",
+      "Developing accurate textures for intricate tile work and decorative elements",
+      "Implementing proper scale and placement relative to surrounding Casablanca scenery",
+      "Balancing detail level with performance requirements for smooth simulation"
+    ],
+    features: [
+      "Highly detailed minaret (the tallest in the world) with accurate proportions",
+      "Realistic prayer hall and courtyard layout",
+      "Custom night lighting matching the real-world landmark",
+      "Proper integration with coastal placement overlooking the Atlantic Ocean",
+      "Open-source licensing for community modifications and improvements"
+    ],
+    technologies: ['3D Modeling', 'Blender', 'Microsoft Flight Simulator SDK', 'Substance Painter', 'PBR Texturing'],
+    link_deployed: "https://flightsim.to/file/311/hassan-ii-grand-mosque-casablanca",
+    role: "3D Modeler & Open-Source Contributor",
+    duration: "6 weeks",
+    impact: "Preserved important cultural landmark in digital form for global simulation enthusiasts"
   }
 ];
