@@ -70,20 +70,20 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
       </p>
 
       {/* Search and filter */}
-      <div className="mb-8">
+      <div className="mb-10">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
             <input
               type="text"
               placeholder="Search projects..."
-              className="w-full p-3 border dark:border-dark-border border-light-border bg-transparent"
+              className="w-full p-3 border dark:border-dark-border border-light-border bg-transparent rounded-sm focus:outline-none focus:ring-1 focus:ring-light-accent dark:focus:ring-dark-accent"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
           <div>
             <select
-              className="w-full p-3 border dark:border-dark-border border-light-border bg-transparent dark:bg-dark-surface dark:text-white text-black"
+              className="w-full p-3 border dark:border-dark-border border-light-border bg-transparent dark:bg-dark-surface dark:text-white text-black rounded-sm focus:outline-none focus:ring-1 focus:ring-light-accent dark:focus:ring-dark-accent"
               value={filterTech || ''}
               onChange={(e) => setFilterTech(e.target.value || null)}
             >
@@ -100,7 +100,7 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
                   setSearchTerm(''); 
                   setFilterTech(null); 
                 }}
-                className="w-full h-full p-3 border dark:border-dark-border border-light-border hover:bg-light-surface dark:hover:bg-dark-surface transition-colors"
+                className="w-full h-full p-3 border dark:border-dark-border border-light-border hover:bg-light-surface dark:hover:bg-dark-surface transition-colors rounded-sm"
               >
                 Clear Filters
               </button>
@@ -109,43 +109,44 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
         </div>
       </div>
 
-      {/* Projects grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      {/* Projects grid - completely redesigned */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {filteredProjects.map((project, index) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
             key={index}
-            className="card p-0 overflow-hidden hover:border-light-accent dark:hover:border-dark-accent transition-all duration-300 flex flex-col mb-2"
+            className="group relative flex flex-col h-full border dark:border-dark-border/50 border-light-border/50 hover:border-light-accent dark:hover:border-dark-accent transition-all duration-300"
           >
             <Link href={`/projects/${project.slug}`} className="flex flex-col h-full">
-              {/* Project Image - Taking up 40% of the card height */}
-              <div className="relative w-full pt-[56.25%] overflow-hidden">
+              {/* Project Image with fixed height */}
+              <div className="relative h-48 w-full overflow-hidden">
                 <Image 
                   src={getProjectImage(project.title)}
                   alt={project.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
-                  className="absolute inset-0 object-cover transition-transform duration-500 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 
-                {/* Gradient overlay for better text visibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 group-hover:opacity-80 transition-opacity"></div>
               </div>
               
               {/* Project content */}
-              <div className="p-5 flex flex-col flex-grow">
-                <h2 className="text-xl font-medium mb-2">{project.title}</h2>
-                <p className="mb-4 text-sm opacity-90">{project.description}</p>
+              <div className="flex flex-col flex-grow p-6 dark:bg-dark-surface/30 bg-light-surface/30">
+                <h2 className="text-xl font-medium mb-3 group-hover:text-light-accent dark:group-hover:text-dark-accent transition-colors">{project.title}</h2>
+                
+                <p className="text-sm opacity-90 mb-5 line-clamp-3">{project.description}</p>
                 
                 {/* Technologies */}
-                <div className="mb-4 flex flex-wrap gap-1.5">
-                  {project.technologies.map((tech, i) => (
+                <div className="flex flex-wrap gap-2 mt-auto mb-5">
+                  {project.technologies.slice(0, 5).map((tech, i) => (
                     <span 
                       key={i} 
-                      className="badge cursor-pointer"
+                      className="text-xs px-2.5 py-1 border dark:border-dark-border/70 border-light-border/70 rounded-sm cursor-pointer hover:bg-light-surface/50 dark:hover:bg-dark-surface/50 transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
                         setFilterTech(tech);
@@ -154,40 +155,40 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 5 && (
+                    <span className="text-xs px-2 py-1 opacity-70">+{project.technologies.length - 5} more</span>
+                  )}
                 </div>
                 
-                {/* Links - push to bottom with mt-auto */}
-                <div className="flex gap-3 mt-auto pt-2">
-              
-                    {project.link === 'private repository' ? (
-                      <div className="inline-flex items-center px-3 py-2 text-sm border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent">
-                        <Lock size={16} className="mr-2 dark:border-dark-accent  dark:text-dark-accent text-light-accent pb-1 " />
-                        <span className="font-medium">Private Repository</span>
-                      </div>
-                    ) : project.link && (
-                      <Link
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent pb-1"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        View Project's Repository →
-                      </Link>
-                    )}
-                    {project.link_deployed && (
-                      <Link
-                        href={project.link_deployed}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-5 text-sm border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent pb-1"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        View Project →
-                      </Link>
-
-                    )}
-                  
+                {/* Links */}
+                <div className="flex items-center gap-4 pt-4 border-t dark:border-dark-border/30 border-light-border/30">
+                  {project.link === 'private repository' ? (
+                    <div className="inline-flex items-center text-sm opacity-80">
+                      <Lock size={14} className="mr-1.5" />
+                      <span>Private Repository</span>
+                    </div>
+                  ) : project.link && (
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm dark:text-dark-accent text-light-accent hover:underline flex items-center"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      View Code →
+                    </Link>
+                  )}
+                  {project.link_deployed && (
+                    <Link
+                      href={project.link_deployed}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm dark:text-dark-accent text-light-accent hover:underline ml-auto"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Live Demo →
+                    </Link>
+                  )}
                 </div>
               </div>
             </Link>
@@ -196,7 +197,7 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
       </div>
       
       {filteredProjects.length === 0 && (
-        <div className="card p-8 text-center mt-8">
+        <div className="border dark:border-dark-border border-light-border p-8 text-center mt-8">
           <Terminal 
             text="find: no matches found" 
             typingSpeed={30}
