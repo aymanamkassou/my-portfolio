@@ -17,7 +17,7 @@ export default function Blog() {
       <div className="grid gap-6 mb-6">
         {displayPosts.map((post) => (
           <Link href={`/blog/${post.id}`} key={post.id}>
-            <div className="card hover:border-light-accent dark:hover:border-dark-accent cursor-pointer">
+            <div className="card hover:border-light-accent dark:hover:border-dark-accent cursor-pointer mb-2">
               <h3 className="text-lg mb-2">{post.title}</h3>
               <div className="text-sm mb-3 text-gray-600 dark:text-gray-400">{post.date}</div>
               <p className="mb-3">{post.excerpt}</p>

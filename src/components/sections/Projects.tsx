@@ -10,7 +10,7 @@ export default function Projects() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <div key={index} className="card mb-2">
+          <div key={index} className="card flex flex-col mb-2">
             <h3 className="text-lg font-medium mb-3">{project.title}</h3>
             <p className="mb-4">{project.description}</p>
             
@@ -22,7 +22,7 @@ export default function Projects() {
               ))}
             </div>
             
-            <div className="mt-4">
+            <div className="mt-auto">
               {project.link === 'private repository' ? (
                 <div className="inline-flex items-center px-3 py-2 text-sm border-b dark:border-dark-accent border-light-accent dark:text-dark-accent text-light-accent">
                   <Lock size={16} className="mr-2 dark:border-dark-accent  dark:text-dark-accent text-light-accent pb-1 " />

@@ -28,7 +28,7 @@ export default function Skills() {
       {/* Other categories (grid layout) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {otherCategories.map((category, index) => (
-          <div key={index} className="card">
+          <div key={index} className="card mb-2">
             <h3 className="text-lg font-medium mb-4">{category.category}</h3>
             <div className="flex flex-wrap">
               {category.skills.map((skill, i) => (
