@@ -115,7 +115,7 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
             key={index}
-            className="card overflow-hidden hover:border-light-accent dark:hover:border-dark-accent transition-all duration-300 flex flex-col mb-2"
+            className="card p-0 overflow-hidden hover:border-light-accent dark:hover:border-dark-accent transition-all duration-300 flex flex-col mb-2"
           >
             <Link href={`/projects/${project.slug}`} className="flex flex-col h-full">
               {/* Project Image - Taking up 40% of the card height */}
