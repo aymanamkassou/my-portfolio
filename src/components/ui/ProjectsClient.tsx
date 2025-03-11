@@ -186,7 +186,7 @@ export default function ProjectsClient({ initialProjects, allTechnologies }: Pro
                       className="text-sm dark:text-dark-accent text-light-accent hover:underline ml-auto"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Live Demo →
+                      View Project →
                     </Link>
                   )}
                 </div>

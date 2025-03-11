@@ -39,7 +39,7 @@ export const projects: Project[] = [
       "Historical flight path comparison system",
       "Customizable aircraft parameters for simulation"
     ],
-    technologies: ['C++', 'cpprestsdk', 'Next.js', 'CSR Graph', 'REST API', 'AWS'],
+    technologies: ['C++', 'AWS', 'Next.js', 'CSR Graph', 'REST API', 'cpprestsdk'],
     link: "https://github.com/aymanamkassou/Flight-Route-Visualizer",
     link_deployed: "https://ifr-route-dijkstra-visualizer.vercel.app/",
     role: "Full-stack Developer & System Architect",
